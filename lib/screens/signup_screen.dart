@@ -16,6 +16,8 @@ class _SignupScreenState extends State<SignupScreen>{
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController name = TextEditingController();
+  TextEditingController country = TextEditingController();
 
 
 
@@ -72,6 +74,41 @@ class _SignupScreenState extends State<SignupScreen>{
                 enableSuggestions: false,
                 decoration: InputDecoration(
                   label: Text('Password'),
+                ),
+              ),
+
+              SizedBox(height: 22,),
+              TextFormField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+
+                controller: name,
+
+                validator: (value){
+                  if(value == null || value.isEmpty){
+                    return "Name is Required";
+                  }
+                },
+
+                decoration: InputDecoration(
+                  label: Text('Name'),
+                ),
+              ),
+
+              SizedBox(height: 22,),
+
+              TextFormField(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+
+                controller: country,
+
+                validator: (value){
+                  if(value == null || value.isEmpty){
+                    return "Country is Required";
+                  }
+                },
+
+                decoration: InputDecoration(
+                  label: Text('Country'),
                 ),
               ),
 
